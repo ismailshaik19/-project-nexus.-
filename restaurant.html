@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://source.unsplash.com/random/1920x1080');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+        .form-group input {
+            margin-bottom: 10px;
+        }
+        .form-group button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: #dc3545;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <input type="text" id="login-username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="login-password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <h2>Signup</h2>
+        <form id="signup-form">
+            <div class="form-group">
+                <input type="text" id="signup-username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="signup-password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Signup</button>
+            </div>
+            <div class="error-message" id="signup-error-message"></div>
+        </form>
+    </div>
+    <script>

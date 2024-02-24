@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #f06, #f80);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            max-width: 800px;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container input[type="text"],
+        .form-container input[type="password"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .form-container input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .form-container .error-message {
+            color: #dc3545;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="login-username" placeholder="Username" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <div class="form-container">
+            <h2>Signup</h2>
+            <form id="signup-form">
+                <input type="text" id="signup-username" placeholder="Username" required>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+                <input type="submit" value="Signup">
+            </form>
+            <div class="error-message" id="signup-error-message"></div>
+        </div>
+    </div>
+    <script>
+        const signupForm = document.getElementById('signup-form');
+        const signupErrorMessage = document.getElementById('signup-error-message');
+
+        signupForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('signup-confirm-password').value;
+
+            if (password !== confirmPassword) {
+                signupErrorMessage.textContent = 'Passwords do not match';
+            } else {
+                signupErrorMessage.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>
